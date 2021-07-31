@@ -17,7 +17,9 @@ export default function CustomTabBar({
     const routes = state?.routes;
 
     return (
-        <ScrollView ref={tabPicker} horizontal
+        <ScrollView
+            showsHorizontalScrollIndicator={false}
+            ref={tabPicker} horizontal
             style={{
                 paddingLeft: moderateScale(5),
                 maxHeight: 40,
@@ -66,7 +68,7 @@ export default function CustomTabBar({
                     >
                         <Text
                             style={{
-                                color: isFocused ? "#fd6769" : "black",
+                                color: isFocused ? "#FC647C" : "black",
                                 fontFamily: "Inter-600",
                                 fontSize: moderateScale(15)
                             }}
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
         height: 5,
         width: 5,
         borderRadius: 2.5,
-        backgroundColor: "#fd6769",
+        backgroundColor: "#FC647C",
         alignSelf: "center",
         marginTop: 2
     }

@@ -23,7 +23,7 @@ export default function CustomButton(props) {
                     ? "grey"
                     : props.disabled
                         ? "grey"
-                        : "#fd6769",
+                        : "#FC647C",
                 ...props.buttonStyles,
             }}
             onPress={props.onPress && !props.disabled ? props.onPress : () => { }}

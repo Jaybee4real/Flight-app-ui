@@ -32,7 +32,7 @@ export default function App() {
           initialRouteName="Home"
         >
           <Stack.Screen name="Home" component={MainComponent} />
-          <Stack.Screen name="Welcome" component={Search} />
+          <Stack.Screen name="Search" component={Search} />
         </Stack.Navigator>
       </NavigationContainer>
     );

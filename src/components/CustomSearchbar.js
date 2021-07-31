@@ -1,14 +1,16 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import { moderateScale } from 'react-native-size-matters'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-export default function CustomSearchbar({ inputStyles, style, ...props }) {
+export default function CustomSearchbar({ inputStyles, style, onFocus, autoFocus, ...props }) {
+    const navigation = useNavigation()
     return (
-        <View style={{ ...styles.container, ...style }}>
-            <TextInput labe="Label" style={{ ...styles.input, ...inputStyles }} />
+        <TouchableOpacity style={{ ...styles.container, ...style }} onPress={() => navigation.push("Search")}>
+            <TextInput autoFocus={autoFocus === true ? true : false} onFocus={() => onFocus?.()} labe="Label" style={{ ...styles.input, ...inputStyles }} />
             <Icon style={styles.icon} name="search" />
-        </View>
+        </TouchableOpacity>
     )
 }
 

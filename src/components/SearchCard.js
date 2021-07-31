@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         color: "grey"
     },
     detailText: {
-        fontSize: moderateScale(17.5),
+        fontSize: moderateScale(16),
         fontFamily: "Inter-700",
         letterSpacing: moderateScale(0.3),
         marginVertical: moderateScale(3)
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
     airplane: {
         transform: [{ rotateZ: "90deg" }],
-        color: "#fd6769",
+        color: "#FC647C",
         position: "relative",
         bottom: 0,
         fontSize: moderateScale(45),

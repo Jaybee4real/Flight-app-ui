@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, SafeAreaView, StatusBar, Image, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, StatusBar, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -12,14 +12,21 @@ import Other from './Other';
 
 ///Import Custom Components ///
 import CustomTabBar from '../components/CustomTabBar';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import CustomSearchbar from '../components/CustomSearchbar';
 const TopTabs = createMaterialTopTabNavigator();
 
 const { height, width } = Dimensions.get("screen")
-export default function MainComponent() {
+export default function MainComponent({ navigation, ...props }) {
+
+
+
+
+
+    
+
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             <StatusBar barStyle="light-content" />
             <View style={styles.headingContainer}>
                 <View style={styles.locationContainer}>
@@ -59,7 +66,7 @@ export default function MainComponent() {
                 <TopTabs.Screen name="Places" component={Places} />
                 <TopTabs.Screen name="Other" component={Other} />
             </TopTabs.Navigator>
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
@@ -102,7 +109,7 @@ const styles = StyleSheet.create({
     locationIcon: {
         fontSize: moderateScale(15),
         marginRight: 5,
-        color: "#fd6769"
+        color: "#FC647C"
     },
     filterContainer: {
         height: moderateScale(42),

@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, Dimensions, StatusBar } from 'react-native'
 import { moderateScale } from 'react-native-size-matters'
+import MiniCard from '../components/MiniCard'
 import SearchCard from "../components/SearchCard"
 
 
@@ -13,6 +14,8 @@ export default function Flights() {
                 backgroundColor="white"
             />
             <SearchCard />
+            <MiniCard />
+            <MiniCard />
         </View>
     )
 }

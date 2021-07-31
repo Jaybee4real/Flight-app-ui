@@ -1,0 +1,3 @@
+|                                                            Mockup Image                                                             |                                                              Screenshot                                                               |
+| :----------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+| ![Jun-31-2021 17-00-57](https://github.com/Jaybee4real/Flight-app-ui/blob/master/src/assets/images/Mockup_image.png) | ![Jul-31-2021 17-00-45](https://github.com/Jaybee4real/Flight-app-ui/blob/master/src/assets/images/Screenshot.jpg) |
