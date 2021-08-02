@@ -19,7 +19,10 @@ export default function App() {
     "Inter-800": require("./src/assets/fonts/Inter-ExtraBold.ttf"),
     "Inter-900": require("./src/assets/fonts/Inter-Black.ttf"),
   });
-  // i
+
+
+  
+
   if (!fontsLoaded || loading === true) {
     return <LoadingScreen />;
   } else

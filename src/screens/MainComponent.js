@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, StatusBar, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Icon from 'react-native-vector-icons/Feather';
@@ -18,13 +18,7 @@ const TopTabs = createMaterialTopTabNavigator();
 
 const { height, width } = Dimensions.get("screen")
 export default function MainComponent({ navigation, ...props }) {
-
-
-
-
-
-    
-
+   
     return (
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             <StatusBar barStyle="light-content" />
@@ -45,7 +39,7 @@ export default function MainComponent({ navigation, ...props }) {
                     <Icon
                         name="sliders"
                         light
-                        style={styles.filterIcon}
+                        style={styles.filterIcon} 
                     />
                 </TouchableOpacity>
             </View>

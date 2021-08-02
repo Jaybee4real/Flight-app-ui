@@ -3,18 +3,21 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { color } from 'react-native-reanimated'
 import { moderateScale, scale } from 'react-native-size-matters'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { formatTime } from '../../helpers'
 
-export default function MiniCard() {
+export default function MiniCard({ item, ...props }) {
 
+
+    const { itineraries, price, travelerPricings } = item
     return (
         <View style={styles.container}>
             <Text style={styles.title}>London Airport</Text>
             <View style={styles.topContainer}>
                 <View style={styles.topContainerInner}>
                     <View style={styles.destinationBox}>
-                        <Text style={styles.greyText}>LON</Text>
-                        <Text style={styles.greyText}>6:00AM</Text>
-                        <Text style={styles.price}>Rp 6.000</Text>
+                        <Text style={styles.greyText}>{itineraries[0].segments[0].departure.iataCode}</Text>
+                        <Text style={styles.greyText}>{formatTime(itineraries[0].segments[0].departure.at)}</Text>
+                        <Text style={styles.price}>{price.currency + " " + price.total}</Text>
                     </View>
                     <View style={styles.traceLine}>
                         <Icon name="radio-button-checked" color={"#e5e5e5e5"} />
@@ -26,8 +29,8 @@ export default function MiniCard() {
                         <Icon name="circle" color={"#FC647C"} />
                     </View>
                     <View style={styles.destinationBox}>
-                        <Text style={styles.greyText}>DXB</Text>
-                        <Text style={styles.greyText}>12:20AM</Text>
+                        <Text style={styles.greyText}>{itineraries[0].segments[0].arrival.iataCode}</Text>
+                        <Text style={styles.greyText}>{formatTime(itineraries[0].segments[0].arrival.at)}</Text>
                         <Text style={styles.remaining}>14 Remains</Text>
                     </View>
                 </View>
@@ -40,8 +43,8 @@ export default function MiniCard() {
                 </TouchableOpacity>
             </View>
             <View style={styles.bottomContainer}>
-                <Text style={{ fontFamily: "Inter-600", color: "#FC647C", fontSize: moderateScale(13), }}>
-                    Business Class
+                <Text style={styles.cabinText}>
+                    {travelerPricings[0].fareDetailsBySegment[0].cabin}
                 </Text>
                 <Text style={styles.greyText}>2Hours 18 minutes</Text>
                 <TouchableOpacity style={styles.button}>
@@ -76,7 +79,7 @@ const styles = StyleSheet.create({
         width: "100%"
     },
     topContainerInner: {
-        flexDirection: "row", 
+        flexDirection: "row",
         maxWidth: "80%"
     },
     title: {
@@ -134,6 +137,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.22,
         shadowRadius: 2.22,
         elevation: 2,
+    },
+    cabinText: {
+        fontFamily: "Inter-600",
+        color: "#FC647C",
+        fontSize: moderateScale(13),
+        textTransform: "capitalize"
     },
     image: {
         height: moderateScale(90),
